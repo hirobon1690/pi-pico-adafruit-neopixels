@@ -52,7 +52,7 @@
 #include <cstdio>
 
 //#define DEBUG0 // high level debugging
-//#define DEBUG1 // low level debugging
+#define DEBUG1 // low level debugging
 
 #ifdef DEBUG0
 #define PRINTF0(...) printf(__VA_ARGS__)
@@ -247,7 +247,8 @@ void Adafruit_NeoPixel::rp2040Init(uint8_t set_pin)
 	pio_no_sm[pio_get_index(pio)]++ ;
 					 
 	pin = set_pin ;
-	sm = resultsm ;
+	// sm = resultsm ;
+  sm=3;
 	
 	PRINTF1("End init = %d, pin = %d, 800kHz = %d, length = %d, pio= %d, sm = %d, offset = %d, no_sm = [%d, %d]\n ", begun, pin, is800KHz, numLEDs, pio_get_index(pio), sm, (pio_get_index(pio) == 0) ? pio0_offset : pio1_offset,pio_no_sm[0], pio_no_sm[1] );
 	
